@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='normalize.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='reset.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='staff_registration.css') }}">
+</head>
+<body>
+	<main>
+	    <div class="form-wrap">
+	        <div class="tabs">
+	           	<h3 class="signup-tab"><a class="active" href="#signup-tab-content">Авторизация</a></h3>
+	        </div>
+	        <!--.tabs-->
+
+	        <div class="tabs-content">
+	            <div id="signup-tab-content" class="active">
+	                <form class="signup-form" method="post">
+	                    <input type="text" class="input" id="user_email" placeholder="Логин" name="login">
+	                    <input type="password" class="input" id="user_name" placeholder="Пароль" name="password">
+	                   	
+	                   	{% if error_state %}
+	                   		<div class="help-text">
+								<p>{{error_message}}</p>
+							</div><!--.help-text-->
+						{% endif%}
+
+	                    <input type="submit" class="button" value="Отправить">
+	                </form>
+	            </div>
+	        </div>
+	        <!--.tabs-content-->
+	    </div>
+	    <!--.form-wrap-->
+	</main>
+</body>
+</html>

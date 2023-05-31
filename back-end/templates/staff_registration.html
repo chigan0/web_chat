@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='normalize.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='reset.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='staff_registration.css') }}">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.6/axios.js" integrity="sha512-//dh2f858Fr7wqGN0IrKqOwzFRMSNDFepYnq0R0Nau+vpQRaUYwViFi7KVniyCALFPOaaMd1n38d5q0pboHjUw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<title>Регистрация персонала</title>
+</head>
+<body>
+	<main>
+	    <div class="form-wrap">
+	        <div class="tabs">
+	            <h3 class="signup-tab"><a class="active" href="#signup-tab-content">Регистрация персонала</a></h3>
+	        </div>
+	        <!--.tabs-->
+
+	        <div class="tabs-content">
+	            <div id="signup-tab-content" class="active">
+	                <form class="signup-form" action="" method="post">
+	                    <input type="login" class="input" id="user_email" placeholder="Логин" name="login">
+	                    <input type="password" class="input" id="user_name" placeholder="Пароль" name="password">
+	                    <input type="password" class="input" id="user_pass" placeholder="Подтверждения Пароля" name="password_confirm">
+	                    <input type="checkbox" class="checkbox" id="remember_me" name="admin_state">
+	                    <label for="remember_me">Статус админа</label>
+
+	                   	{% if error_state %}
+	                   		<div class="help-text">
+								<p>{{error_message}}</p>
+							</div><!--.help-text-->
+						{% endif%}
+
+	                    <input type="submit" class="button" value="Отправить">
+	                </form>
+	            </div>
+	        </div>
+	        <!--.tabs-content-->
+	    </div>
+	    <!--.form-wrap-->
+	</main>
+
+</body>
+</html>
